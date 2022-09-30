@@ -25,7 +25,7 @@ void OnGaussChange(int blurval, void* v) {
 
 int main()
 {
-    g_srcim = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\girl_480.jpg",1);
+    g_srcim = imread("girl.jpg",1);
     g_dstboxim = g_srcim.clone();
     g_dstblurim = g_srcim.clone();
     g_dstgaussim = g_srcim.clone();
