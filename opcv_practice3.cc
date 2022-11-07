@@ -21,7 +21,7 @@ int main()
 
 	split(girlimg2, channel);
 
-	cv::resize(sceneimg, sceneimg, Size(480, 480));
+	resize(sceneimg, sceneimg, Size(480, 480));
 	addWeighted(girlimg3, 0.6, sceneimg, 0.4, 0.0, girlimg3);
 	
 
