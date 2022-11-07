@@ -8,12 +8,12 @@ using namespace cv;
 
 int main()
 {
-	Mat girlimg = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\girl_480.jpg", 1);
-	Mat girlimg2 = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\girl_480.jpg",1);
-	Mat girlimg3 = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\girl_480.jpg", 1);
-	Mat sceneimg = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\scene.jpg");
-	Mat lightimg = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\light.jpg", 1);
-	Mat mask = imread("C:\\Users\\wangyicheng\\Desktop\\restudy\\light.jpg", 0);
+	Mat girlimg = imread("girl.jpg", 1);
+	Mat girlimg2 = imread("girl.jpg",1);
+	Mat girlimg3 = imread("girl.jpg", 1);
+	Mat sceneimg = imread("scene.jpg");
+	Mat lightimg = imread("light.jpg", 1);
+	Mat mask = imread("light.jpg", 0);
 	vector<Mat> channel;
 
 	Mat ROI = girlimg(Rect(128,128, lightimg.cols, lightimg.rows));
@@ -31,8 +31,8 @@ int main()
 	imshow("split3", channel[2]);
 	imshow("addweight", girlimg3);
 	waitKey(0);
-	imwrite("C:\\Users\\wangyicheng\\Desktop\\restudy\\ROI.jpg", girlimg);
-	imwrite("C:\\Users\\wangyicheng\\Desktop\\restudy\\split.jpg", channel[0]);
-	imwrite("C:\\Users\\wangyicheng\\Desktop\\restudy\\addWeighted.jpg", girlimg3);
+	imwrite("ROI.jpg", girlimg);
+	imwrite("split.jpg", channel[0]);
+	imwrite("addWeighted.jpg", girlimg3);
     return 0;
 }
