@@ -1,0 +1,24 @@
+#include<opencv2/core/core.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include<opencv2/imgproc.hpp>
+#include <iostream>
+
+
+int main()
+{
+    
+    cv::Mat img(512, 512, CV_8UC3, cv::Scalar(0, 0, 0));
+
+    for (int i = 0;i < img.rows;i++) {
+        for (int j = 0;j < img.cols;j++) {
+            img.at<cv::Vec3b>(i, j)[0] = (img.cols - j) / (img.rows / 255);
+            img.at<cv::Vec3b>(i, j)[1] = (img.cols-i)/(img.rows/255);
+            img.at<cv::Vec3b>(i, j)[2] = i + j;
+        }
+    }
+
+    cv::imshow("opecv_win", img);
+
+    cv::waitKey(0);
+    return 0;
+}
